@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Network Packet Prettifier
+
+A modern web application for visualizing and prettifying network packet data. Built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- 🎯 **Drag & Drop Interface**: Easy file upload with support for multiple packet formats
+- 📝 **Paste Support**: Directly paste packet data from clipboard
+- 🔍 **Smart Parsing**: Automatically detects and parses various packet formats:
+  - Wireshark exports
+  - tcpdump output
+  - JSON packet data
+  - CSV format
+  - Generic text formats
+- 🔎 **Advanced Search**: Search packets by IP, port, protocol, or content with real-time filtering
+- 🎨 **Beautiful Visualization**: Clean, modern interface with protocol color coding
+- 📊 **Detailed View**: Expandable packet details with all metadata
+- 📄 **Pagination**: Efficient handling of large datasets (84k+ packets)
+- 📤 **Export Options**: Export parsed data in multiple formats (TXT, JSON, CSV)
+- 📱 **Mobile Responsive**: Optimized for desktop, tablet, and mobile devices
+- 🌙 **Dark Mode**: Automatic dark/light theme support
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd network-packet-prettifier
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm build
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is configured for easy deployment on Vercel:
 
-## Deploy on Vercel
+1. Push your code to a Git repository
+2. Import the project in Vercel
+3. Deploy with zero configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project includes a `vercel.json` configuration file optimized for Next.js deployment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Supported Formats
+
+- **Wireshark**: Standard Wireshark text exports
+- **tcpdump**: Command-line packet capture output
+- **JSON**: Structured packet data
+- **CSV**: Comma-separated packet information
+- **Generic**: Plain text with automatic field detection
+
+## Usage
+
+1. **Upload Files**: Drag and drop packet capture files or use the file picker
+2. **Paste Data**: Copy packet data from other tools and paste directly
+3. **View Details**: Click on packets to expand detailed information
+4. **Export**: Download parsed data in your preferred format
+
+## Technology Stack
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **Styling**: Tailwind CSS 4
+- **Components**: Lucide React icons
+- **File Handling**: React Dropzone
+- **Build Tool**: pnpm
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is open source and available under the MIT License.
