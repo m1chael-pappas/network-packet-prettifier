@@ -1,6 +1,12 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css';
+
+import type { Metadata } from 'next';
+import {
+  Geist,
+  Geist_Mono,
+} from 'next/font/google';
+
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +20,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Network Packet Prettifier",
-  description: "Advanced packet analysis with modern visualization. Upload captures or paste data to decode network traffic.",
-  keywords: ["packet analysis", "network", "wireshark", "pcap", "network security", "packet capture"],
+  description:
+    "Advanced packet analysis with modern visualization. Upload captures or paste data to decode network traffic.",
+  keywords: [
+    "packet analysis",
+    "network",
+    "wireshark",
+    "pcap",
+    "network security",
+    "packet capture",
+  ],
   authors: [{ name: "Network Packet Prettifier" }],
   creator: "Network Packet Prettifier",
   publisher: "Network Packet Prettifier",
@@ -24,20 +38,20 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
     ],
-    apple: [
-      { url: "/icon.svg", sizes: "180x180", type: "image/svg+xml" },
-    ],
+    apple: [{ url: "/icon.svg", sizes: "180x180", type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Network Packet Prettifier",
-    description: "Advanced packet analysis with modern visualization. Upload captures or paste data to decode network traffic.",
+    description:
+      "Advanced packet analysis with modern visualization. Upload captures or paste data to decode network traffic.",
     type: "website",
     siteName: "Network Packet Prettifier",
   },
   twitter: {
     card: "summary_large_image",
     title: "Network Packet Prettifier",
-    description: "Advanced packet analysis with modern visualization. Upload captures or paste data to decode network traffic.",
+    description:
+      "Advanced packet analysis with modern visualization. Upload captures or paste data to decode network traffic.",
   },
 };
 
@@ -52,6 +66,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
